@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Layout from "../core/Layout";
 import { isAuthenticated } from "../auth";
 import { Link } from "react-router-dom";
 import { getPurchaseHistory } from "./apiUser";
 import moment from "moment";
+import '../styles.css'
 
 import Navbar from "../core/Menu";
 
@@ -95,11 +95,13 @@ const Dashboard = () => {
   return (
     <div>
       <Navbar />
-      <div className="row">
-        <div className="col-3">{userLinks()}</div>
-        <div className="col-9">
-          {userInfo()}
-          {purchaseHistory(history)}
+      <div className="__dashboard">
+        <div className="row">
+          <div className="col-3">{userLinks()}</div>
+          <div className="col-9">
+            {userInfo()}
+            {purchaseHistory(history)}
+          </div>
         </div>
       </div>
     </div>

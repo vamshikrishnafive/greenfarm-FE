@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Layout from "./Layout";
 import { getCart } from "./cartHelpers";
 import Card from "./Card";
 import Checkout from "./Checkout";
+import Ads from './Ads'
 
 import Navbar from './Menu'
 
@@ -41,6 +41,7 @@ const Cart = () => {
     return (
         <div>
             <Navbar/>
+            <Ads/>
             <div className="row">
                 <div className="col-6">
                     {items.length > 0 ? showItems(items) : noItemsMessage()}

@@ -1,32 +1,40 @@
-import React, { Component } from "react";
-import "../styles.css";
+import React from 'react';
 
-import BG1 from "../images/bgnew1edit.gif";
-import BG2 from "../images/bgnew2edit.gif";
-import BG3 from "../images/bgnew3edit.gif";
+import B1 from '../images/bananac.jpg'
+import B2 from '../images/applec.jpg'
+import B3 from '../images/promganate.jpg'
 
-export class HeroSection extends Component {
-  render() {
-    return (
-      <header>
-        <div className="title">
-          <h1>
-            Green <span className="tagName">Field</span>, Green{" "}
-            <span className="tagName">Environment</span>
-          </h1>
-          <p>
-            <b>
-              India is a land of 120 million farmers.
-              <br /> Farmers work hard year long but their income wiped out due
-              to factors beyond their control.
-              <br />
-              We are giving farmers dependable incomes.
-            </b>
-          </p>
-        </div>
-      </header>
-    );
-  }
+
+const HeroSection = () => {
+  return(
+    <div>
+      <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img className="d-block w-100" src={B1} alt="First slide"/>
+    </div>
+    <div className="carousel-item">
+      <img className="d-block w-100" src={B2} alt="Second slide"/>
+    </div>
+    <div className="carousel-item">
+      <img className="d-block w-100" src={B3} alt="Third slide"/>
+    </div>
+  </div>
+  <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="sr-only">Previous</span>
+  </a>
+  <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="sr-only">Next</span>
+  </a>
+</div>
+    </div>
+  )
 }
 
 export default HeroSection;
+
+
+
+// Fresh and only the Finest produce on your tables
