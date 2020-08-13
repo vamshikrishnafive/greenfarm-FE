@@ -18,6 +18,8 @@ import ManageProducts from "./admin/ManageProducts";
 import UpdateProduct from "./admin/UpdateProduct";
 import UpdateCategory from "./admin/updateCategory";
 import AboutUs from './core/AboutUs'
+import PageNotFound from "./core/PageNotFound";
+
 
 const Routes = () => {
   return (
@@ -48,6 +50,7 @@ const Routes = () => {
           exact
           component={UpdateCategory}
         />
+        <Route path="*" component={PageNotFound} />
       </Switch>
     </BrowserRouter>
   );
