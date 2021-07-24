@@ -13,23 +13,15 @@ const Orders = () => {
   const { user, token } = isAuthenticated();
 
   const loadOrders = () => {
-    listOrders(user._id, token).then((data) => {
-      if (data.error) {
-        console.log(data.error);
-      } else {
-        setOrders(data);
-      }
-    });
+    listOrders(user._id, token)
+      .then(data => setOrders(data))
+      .catch(error => console.log(error));
   };
 
   const loadStatusValues = () => {
-    getStatusValues(user._id, token).then((data) => {
-      if (data.error) {
-        console.log(data.error);
-      } else {
-        setStatusValues(data);
-      }
-    });
+    getStatusValues(user._id, token)
+      .then(data => setStatusValues(data))
+      .catch(error =>console.log(error));
   };
 
   useEffect(() => {
@@ -89,7 +81,6 @@ const Orders = () => {
       <div className="row">
         <div className="col-md-8 offset-md-2">
           {showOrdersLength()}
-
           {orders.map((o, oIndex) => {
             return (
               <div
