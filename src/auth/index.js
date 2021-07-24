@@ -1,4 +1,4 @@
-import { API } from "../config";
+const API = 'https://greenfarmserver.herokuapp.com/api';
 
 export const signup = user => {
     return fetch(`${API}/signup`, {

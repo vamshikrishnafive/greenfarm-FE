@@ -1,5 +1,6 @@
-import { API } from "../config";
 import queryString from "query-string";
+
+const API = 'https://greenfarmserver.herokuapp.com/api';
 
 export const getProducts = sortBy => {
     return fetch(`${API}/products?sortBy=${sortBy}&order=desc&limit=6`, {
@@ -100,9 +101,7 @@ export const processPayment = (userId, token, paymentData) => {
         },
         body: JSON.stringify(paymentData)
     })
-        .then(response => {
-            return response.json();
-        })
+        .then(response => response.json())
         .catch(err => console.log(err));
 };
 

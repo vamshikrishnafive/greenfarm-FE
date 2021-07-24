@@ -1,5 +1,5 @@
 import React from "react";
-import { API } from "../config";
+const API = 'https://greenfarmserver.herokuapp.com/api';
 
 const ShowImage = ({ item, url }) => (
     <div className="product-img">
