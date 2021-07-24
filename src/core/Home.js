@@ -14,23 +14,15 @@ const Home = () => {
   const [error, setError] = useState(false);
 
   const loadProductsBySell = () => {
-    getProducts("sold").then((data) => {
-      if (data.error) {
-        setError(data.error);
-      } else {
-        setProductsBySell(data);
-      }
-    });
+    getProducts("sold")
+      .then((data) => setProductsBySell(data))
+      .catch((error) => setError(error));
   };
 
   const loadProductsByArrival = () => {
-    getProducts("createdAt").then((data) => {
-      if (data.error) {
-        setError(data.error);
-      } else {
-        setProductsByArrival(data);
-      }
-    });
+    getProducts("createdAt")
+      .then((data) => setProductsByArrival(data))
+      .catch((error) => setError(error));
   };
 
   useEffect(() => {
@@ -42,7 +34,6 @@ const Home = () => {
     <div>
       <Menu />
       <HeroSection />
-      
       {/* <Search /> */}
       <h2 className="mb-4">Fresh Uploads</h2>
       <div className="row">
