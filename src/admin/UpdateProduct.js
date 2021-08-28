@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../auth";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { getProduct, getCategories, updateProduct } from "./apiAdmin";
 
 import Navbar from '../core/Menu'
@@ -28,8 +28,8 @@ const UpdateProduct = ({ match }) => {
     description,
     price,
     categories,
-    category,
-    shipping,
+    /*category,
+    shipping,*/
     quantity,
     loading,
     error,
@@ -76,6 +76,7 @@ const UpdateProduct = ({ match }) => {
 
   useEffect(() => {
     init(match.params.productId);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = (name) => (event) => {

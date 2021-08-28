@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../styles.css";
-import Shop from "./Shop";
+// import Shop from "./Shop";
 import { Link } from "react-router-dom";
 
 export class About extends Component {

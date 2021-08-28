@@ -37,7 +37,8 @@ const Product = props => {
             <Navbar/>
             <div className="row">
                 <div className="col-8">
-                    {product && product.description && (
+                    {error && <h1>{error}</h1>}
+                    {!error && product && product.description && (
                         <Card product={product} showViewProductButton={false} />
                     )}
                 </div>

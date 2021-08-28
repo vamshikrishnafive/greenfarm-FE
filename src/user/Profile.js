@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../auth";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { read, update, updateUser } from "./apiUser";
 
 import Navbar from "../core/Menu";
@@ -15,7 +15,7 @@ const Profile = ({ match }) => {
   });
 
   const { token } = isAuthenticated();
-  const { name, email, password, error, success } = values;
+  const { name, email, password, success } = values;
 
   const init = (userId) => {
     // console.log(userId);
@@ -30,7 +30,8 @@ const Profile = ({ match }) => {
 
   useEffect(() => {
     init(match.params.userId);
-  }, []);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [match.params.userId]);
 
   const handleChange = (name) => (e) => {
     setValues({ ...values, error: false, [name]: e.target.value });

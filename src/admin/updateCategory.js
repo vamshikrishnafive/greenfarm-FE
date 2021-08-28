@@ -36,7 +36,8 @@ const UpdateCategory = ({ match }) => {
 
   useEffect(() => {
     init(match.params.categoryId);
-  }, []);
+        //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [match.params.categoryId]);
 
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
@@ -133,7 +134,7 @@ const UpdateCategory = ({ match }) => {
 
   return (
     <div>
-    <Navbar/>
+      <Navbar />
       <div className="row">
         <div className="col-md-8 offset-md-2 m-b-250 mb-5">
           {showError()}

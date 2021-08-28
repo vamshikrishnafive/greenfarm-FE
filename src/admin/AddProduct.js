@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../auth";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { createProduct, getCategories } from "./apiAdmin";
 
 import Navbar from '../core/Menu'
@@ -27,13 +27,13 @@ const AddProduct = () => {
     description,
     price,
     categories,
-    category,
-    shipping,
+    /*category,
+    redirectToProfile,
+    shipping,*/
     quantity,
     loading,
     error,
     createdProduct,
-    redirectToProfile,
     formData,
   } = values;
   // load categories and set form data
@@ -52,6 +52,7 @@ const AddProduct = () => {
   };
   useEffect(() => {
     init();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   const handleChange = (name) => (event) => {
     const value = name === "photo" ? event.target.files[0] : event.target.value;

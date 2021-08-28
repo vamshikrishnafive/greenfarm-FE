@@ -6,7 +6,7 @@ import Navbar from "../core/Menu";
 
 const AdminDashboard = () => {
   const {
-    user: { _id, name, email, role },
+    user: {name, email, role },
   } = isAuthenticated();
 
   const adminLinks = () => {

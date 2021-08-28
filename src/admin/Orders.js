@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { isAuthenticated } from "../auth";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { listOrders, getStatusValues, updateOrderStatus } from "./apiAdmin";
 import moment from "moment";
 
@@ -27,6 +27,7 @@ const Orders = () => {
   useEffect(() => {
     loadOrders();
     loadStatusValues();
+        //eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const showOrdersLength = () => {
